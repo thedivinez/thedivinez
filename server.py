@@ -1,6 +1,6 @@
 import os
-from flask import request, jsonify
 from tinydb import TinyDB, Query
+from flask import request, jsonify
 from flask import Flask, render_template
 
 db_query = Query()
