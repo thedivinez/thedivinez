@@ -1,16 +1,3 @@
-
-/*-----------------------------------------------------------------------------------
-
-    Theme Name: Daniels
-    Theme URI: http://
-    Description: Portfolio Onepage Template
-    Author: creativotheme
-    Author URI: http://themeforest.net/user/creativotheme
-    Version: 1.0
-
------------------------------------------------------------------------------------*/
-
-
 /* ----------------------------------------------------------------
 
 TABLE OF CONTENTS
@@ -205,13 +192,15 @@ $(window).on("load", function () {
     $('#contact-form').on('submit', function (e) {
         e.preventDefault();
         $.ajax({
-            type: "GET",
+            type: "POST",
             url: "http://127.0.0.1:5000/newmessage",
             data: $('#contact-form').serialize(),
-            success: (data) => console.log(data.message)
-        }).then((_) => window.stop());
+            success: (data) => {
+                document.getElementById("response_message").textContent = data.message;
+                $("#success_modal").modal();
+            }
+        });
         $('#contact-form')[0].reset();
-        $("#success_modal").modal();
     });
 
 });
