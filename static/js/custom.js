@@ -193,7 +193,7 @@ $(window).on("load", function () {
         e.preventDefault();
         $.ajax({
             type: "POST",
-            url: "http://127.0.0.1:5000/newmessage",
+            url: "/newmessage",
             data: $('#contact-form').serialize(),
             success: (data) => {
                 document.getElementById("response_message").textContent = data.message;
