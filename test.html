@@ -5,146 +5,290 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap Elegant Modal Login Modal Form with Avatar Icon</title>
-  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet"> -->
-  <link rel="stylesheet" href="./static/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./static/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="./static/js/bootstrap.min.js"></script>
+  <title>Telescrape</title>
+
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800" rel="stylesheet">
+
+  <!-- owl carousel CSS -->
+  <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+
+  <!-- magnific-popup CSS -->
+  <link rel="stylesheet" href="css/magnific-popup.css">
+
+  <!-- animate.min CSS -->
+  <link rel="stylesheet" href="css/animate.min.css">
+
+  <!-- Font Icon Core CSS -->
+  <link rel="stylesheet" href="static/css/font-awesome.min.css">
+  <link rel="stylesheet" href="static/css/et-line.css">
+
+  <!-- Core Style Css -->
+  <link rel="stylesheet" href="static/css/style.css">
+
+  <!--[if lt IE 9]-->
+  <script src="static/static/js/html5shiv.min.js"></script>
+  <!--[endif]-->
+
   <style>
-    body {
-      font-family: 'Varela Round', sans-serif;
+    .modal-newsletter {
+      color: #999;
+      font-size: 15px;
     }
 
-    .modal-login {
-      color: #636363;
-      width: 350px;
-      margin: 80px auto 0;
-    }
-
-    .modal-login .modal-content {
-      padding: 20px;
-      border-radius: 5px;
+    .modal-newsletter .modal-content {
+      padding: 40px;
+      border-radius: 0;
       border: none;
     }
 
-    .modal-login .modal-header {
+    .modal-newsletter .modal-header {
       border-bottom: none;
       position: relative;
-      justify-content: center;
-    }
-
-    .modal-login h4 {
       text-align: center;
-      font-size: 26px;
-      margin: 30px 0 -15px;
+      border-radius: 5px 5px 0 0;
     }
 
-    .modal-login .form-control:focus {
-      border-color: #70c5c0;
+    .modal-newsletter h4 {
+      color: #000;
+      text-align: center;
+      font-size: 30px;
+      margin: 0 0 25px;
+      font-weight: bold;
+      text-transform: capitalize;
     }
 
-    .modal-login .form-control,
-    .modal-login .btn {
-      min-height: 40px;
+    .modal-newsletter .close {
+      background: #c0c3c8;
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      color: #fff;
+      text-shadow: none;
+      opacity: 0.5;
+      width: 22px;
+      height: 22px;
+      border-radius: 20px;
+      font-size: 16px;
+    }
+
+    .modal-newsletter .close span {
+      position: relative;
+      top: -1px;
+    }
+
+    .modal-newsletter .close:hover {
+      opacity: 0.8;
+    }
+
+    .modal-newsletter .icon-box {
+      color: #323333;
+      display: inline-block;
+      z-index: 9;
+      text-align: center;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .modal-newsletter .icon-box i {
+      font-size: 110px;
+    }
+
+    .modal-newsletter .form-control,
+    .modal-newsletter .btn {
+      min-height: 46px;
       border-radius: 3px;
     }
 
-    .modal-login .close {
-      position: absolute;
-      top: -5px;
-      right: -5px;
+    .modal-newsletter .form-control {
+      box-shadow: none;
+      border-color: #dbdbdb;
     }
 
-    .modal-login .modal-footer {
-      background: #ecf0f1;
-      border-color: #dee4e7;
-      text-align: center;
-      justify-content: center;
-      margin: 0 -20px -20px;
-      border-radius: 5px;
-      font-size: 13px;
+    .modal-newsletter .form-control:focus {
+      border-color: #323333;
+      box-shadow: 0 0 8px rgba(59, 59, 61, 0.5);
     }
 
-    .modal-login .modal-footer a {
-      color: #999;
-    }
-
-    .modal-login .avatar {
-      position: absolute;
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-      top: -70px;
-      width: 95px;
-      height: 95px;
-      border-radius: 50%;
-      z-index: 9;
-      background: #60c7c1;
-      padding: 15px;
-      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-    }
-
-    .modal-login .avatar img {
-      width: 100%;
-    }
-
-    .modal-login .btn {
+    .modal-newsletter .btn {
       color: #fff;
       border-radius: 4px;
-      background: #60c7c1;
+      background: #323333;
       text-decoration: none;
       transition: all 0.4s;
       line-height: normal;
+      padding: 6px 20px;
+      min-width: 150px;
       border: none;
     }
 
-    .modal-login .btn:hover,
-    .modal-login .btn:focus {
-      background: #45aba6;
+    .modal-newsletter .btn:hover,
+    .modal-newsletter .btn:focus {
+      background: #494949;
       outline: none;
     }
 
-    .trigger-btn {
-      display: inline-block;
+    .modal-newsletter .input-group {
+      margin: 30px 0 15px;
+    }
+
+    .hint-text {
       margin: 100px auto;
+      text-align: center;
+    }
+
+    .appscreenshots {
+      vertical-align: middle;
+      width: auto;
+      height: 400px;
     }
   </style>
 
 </head>
 
 <body>
-  <!-- Login Modal HTML -->
-  <div id="loginmodal" class="modal fade">
-    <div class="modal-dialog modal-login">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="avatar">
-            <img src="./static/img/avatar.png" alt="Avatar">
-          </div>
-          <h4 class="modal-title">Admin Login</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <section style="margin:3%;">
+    <!-- About Section Starts -->
+    <section class="section-padding">
+      <!-- Nested Container Starts -->
+      <div class="container">
+        <div class="row">
+          <!-- Phone Mockup Starts -->
+          <!-- Carousel Starts -->
+          <section class="col-md-4 col-xs-12">
+            <div class="carousel slide" data-ride="carousel" class="appscreenshots">
+              <!-- Indicators Starts -->
+              <ol class="carousel-indicators">
+                <li data-target="#about-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#about-carousel" data-slide-to="1"></li>
+                <li data-target="#about-carousel" data-slide-to="2"></li>
+                <li data-target="#about-carousel" data-slide-to="3"></li>
+              </ol>
+              <!-- Indicators Ends -->
+              <!-- Wrapper For Slides Starts -->
+              <div class="carousel-inner">
+                <!-- Slide #1 Starts -->
+                <div class="item active">
+                  <img src="static/img/store/telescrape/01.png" alt="App Screens" class="appscreenshots">
+                </div>
+                <!-- Slide #1 Ends -->
+                <!-- Slide #2 Starts -->
+                <div class="item">
+                  <img src="static/img/store/telescrape/02.png" alt="App Screens" class="appscreenshots">
+                </div>
+                <!-- Slide #2 Ends -->
+                <!-- Slide #3 Starts -->
+                <div class="item">
+                  <img src="static/img/store/telescrape/03.png" alt="App Screens" class="appscreenshots">
+                </div>
+                <!-- Slide #3 Ends -->
+                <!-- Slide #4 Starts -->
+                <div class="item">
+                  <img src="static/img/store/telescrape/04.png" alt="App Screens" class="appscreenshots">
+                </div>
+                <!-- Slide #4 Ends -->
+              </div>
+              <!-- Wrapper For Slides Ends -->
+            </div>
+            <!-- Carousel Ends -->
+          </section>
+          <!-- App Content Starts -->
+          <section class="col-md-6 col-xs-12 text-center-sm text-center-xs col-md-offset-0">
+            <div class="section-head">
+              <h3>Telescrape</h3>
+            </div>
+            <br>
+            <p>
+              This app allows you to scrap group members from other groups and make them your own. All you need are
+              telegram credentials which you can get <b><a href="https://my.telegram.org/auth?to=apps">here</a></b>
+              add them to your account within the app and start adding.
+            </p><br><br>
+            ✓ Stunning flexibility<br>
+            ✓ Add new menbers easily<br>
+            ✓ Reliable and Secure Platform<br>
+            ✓ Cool features and easy to use<br>
+            ✓ Add at least 2764 members per day<br>
+            ✓ Everything is perfectly orgainized for future<br><br>
+            <button onclick="download();" class="btn btn-lg"><i class="fa fa-arrow-left"></i> Back Home</button>
+            <button onclick="download();" class="btn btn-lg col-md-offset-5"><i class="fa fa-cloud-download"></i>
+              Download</button>
+            <!-- App Content Ends -->
+          </section>
         </div>
-        <div class="modal-body">
+      </div>
+      <!-- Nested Container Ends -->
+    </section>
+    <!-- About Section Ends -->
+
+    <div id="newsletter" class="modal fade">
+      <div class="modal-dialog modal-newsletter">
+        <div class="modal-content">
           <form action="/examples/actions/confirmation.php" method="post">
-            <div class="form-group">
-              <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+            <div class="modal-header">
+              <div class="icon-box">
+                <i class="fa fa-envelope-open-o"></i>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span>&times;</span></button>
             </div>
-            <div class="form-group">
-              <input type="password" class="form-control" name="password" placeholder="Password" required="required">
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+            <div class="modal-body text-center">
+              <h4>Get it now!</h4>
+              <p>This App is a limited edition. Free trial exclusively available to the first 50 users, leave your
+                email and I'll get back to you.</p>
+              <div class="input-group">
+                <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                <span class="input-group-btn">
+                  <input type="submit" class="btn btn-primary" value="Subscribe">
+                </span>
+              </div>
             </div>
           </form>
         </div>
-        <div class="modal-footer">
-          <a href="#">Forgot Password?</a>
-        </div>
       </div>
     </div>
-  </div>
-  <script type="text/javascript"> $(window).on('load', () => $('#loginmodal').modal('show'));</script>
+  </section>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+
+  <!-- bootstrap -->
+  <script src="static/js/bootstrap.min.js"></script>
+
+  <!-- scrollIt -->
+  <script src="static/js/scrollIt.min.js"></script>
+
+  <!-- magnific-popup -->
+  <script src="static/js/jquery.magnific-popup.min.js"></script>
+
+  <!-- owl carousel -->
+  <script src="static/js/owl.carousel.min.js"></script>
+
+  <!-- stellar static/js -->
+  <script src="static/js/jquery.stellar.min.js"></script>
+
+  <!-- animated.headline -->
+  <script src="static/js/animated.headline.js"></script>
+
+  <!-- jquery.waypoints.min static/js -->
+  <script src="static/js/jquery.waypoints.min.js"></script>
+
+  <!-- jquery.counterup.min static/js -->
+  <script src="static/js/jquery.counterup.min.js"></script>
+
+  <!-- isotope.pkgd.min static/js -->
+  <script src="static/js/isotope.pkgd.min.js"></script>
+
+  <!-- validator static/js -->
+  <script src="static/js/validator.js"></script>
+
+  <script type="text/javascript">
+    download = () => $('#newsletter').modal('show');
+  </script>
+
 </body>
 
 </html>

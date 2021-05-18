@@ -38,6 +38,11 @@ def jobs():
   return render_template("jobs.html", jobs=list(table.jobs.find({}, {"_id": 0})))
 
 
+@app.route("/apps/<target>")
+def gotopage(target):
+  return render_template(f"projects/{target}.html")
+
+
 @app.route("/newmessage", methods=["POST"])
 def newmesage():
   job = dict(request.form)

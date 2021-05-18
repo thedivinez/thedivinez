@@ -1,0 +1,258 @@
+{%extends "layout.html"%}
+
+{%block customcss %}
+<style>
+  .modal-newsletter {
+    color: #999;
+    font-size: 15px;
+  }
+
+  .modal-newsletter .modal-content {
+    padding: 40px;
+    border-radius: 0;
+    border: none;
+  }
+
+  .modal-newsletter .modal-header {
+    border-bottom: none;
+    position: relative;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .modal-newsletter h4 {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    margin: 0 0 25px;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+
+  .modal-newsletter .close {
+    background: #c0c3c8;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    color: #fff;
+    text-shadow: none;
+    opacity: 0.5;
+    width: 22px;
+    height: 22px;
+    border-radius: 20px;
+    font-size: 16px;
+  }
+
+  .modal-newsletter .close span {
+    position: relative;
+    top: -1px;
+  }
+
+  .modal-newsletter .close:hover {
+    opacity: 0.8;
+  }
+
+  .modal-newsletter .icon-box {
+    color: #323333;
+    display: inline-block;
+    z-index: 9;
+    text-align: center;
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .modal-newsletter .icon-box i {
+    font-size: 110px;
+  }
+
+  .modal-newsletter .form-control,
+  .modal-newsletter .btn {
+    min-height: 46px;
+    border-radius: 3px;
+  }
+
+  .modal-newsletter .form-control {
+    box-shadow: none;
+    border-color: #dbdbdb;
+  }
+
+  .modal-newsletter .form-control:focus {
+    border-color: #323333;
+    box-shadow: 0 0 8px rgba(59, 59, 61, 0.5);
+  }
+
+  .modal-newsletter .btn {
+    color: #fff;
+    border-radius: 4px;
+    background: #323333;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    padding: 6px 20px;
+    min-width: 150px;
+    border: none;
+  }
+
+  .modal-newsletter .btn:hover,
+  .modal-newsletter .btn:focus {
+    background: #494949;
+    outline: none;
+  }
+
+  .modal-newsletter .input-group {
+    margin: 30px 0 15px;
+  }
+
+  .hint-text {
+    margin: 100px auto;
+    text-align: center;
+  }
+
+  .appscreenshots {
+    vertical-align: middle;
+    width: auto;
+    height: 400px;
+  }
+</style>
+
+{%endblock%}
+
+{%block content %}
+<!-- ====== Navgition ======  -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-icon-collapse"
+        aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- logo -->
+      <a class="logo" href="#">Divine</a>
+
+    </div>
+
+    <!-- Collect the nav links, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="nav-icon-collapse">
+
+      <!-- links -->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" data-scroll-nav="0" class="active">Home</a></li>
+        <li><a href="#" data-scroll-nav="1">About</a></li>
+        <li><a href="#" data-scroll-nav="2">Services</a></li>
+        <li><a href="#" data-scroll-nav="3">Portfolio</a></li>
+        <li><a href="#" data-scroll-nav="6">Contact</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
+<!-- ====== End Navgition ======  -->
+<section style="margin:3%;">
+  <!-- About Section Starts -->
+  <section class="section-padding">
+    <!-- Nested Container Starts -->
+    <div class="container">
+      <div class="row">
+        <!-- Phone Mockup Starts -->
+        <!-- Carousel Starts -->
+        <section class="col-md-4 col-xs-12">
+          <div class="carousel slide" data-ride="carousel" class="appscreenshots">
+            <!-- Indicators Starts -->
+            <ol class="carousel-indicators">
+              <li data-target="#about-carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#about-carousel" data-slide-to="1"></li>
+              <li data-target="#about-carousel" data-slide-to="2"></li>
+              <li data-target="#about-carousel" data-slide-to="3"></li>
+            </ol>
+            <!-- Indicators Ends -->
+            <!-- Wrapper For Slides Starts -->
+            <div class="carousel-inner">
+              <!-- Slide #1 Starts -->
+              <div class="item active">
+                <img src="../../static/img/store/telescrape/01.png" alt="App Screens" class="appscreenshots">
+              </div>
+              <!-- Slide #1 Ends -->
+              <!-- Slide #2 Starts -->
+              <div class="item">
+                <img src="../../static/img/store/telescrape/02.png" alt="App Screens" class="appscreenshots">
+              </div>
+              <!-- Slide #2 Ends -->
+              <!-- Slide #3 Starts -->
+              <div class="item">
+                <img src="../../static/img/store/telescrape/03.png" alt="App Screens" class="appscreenshots">
+              </div>
+              <!-- Slide #3 Ends -->
+              <!-- Slide #4 Starts -->
+              <div class="item">
+                <img src="../../static/img/store/telescrape/04.png" alt="App Screens" class="appscreenshots">
+              </div>
+              <!-- Slide #4 Ends -->
+            </div>
+            <!-- Wrapper For Slides Ends -->
+          </div>
+          <!-- Carousel Ends -->
+        </section>
+        <!-- App Content Starts -->
+        <section class="col-md-6 col-xs-12 text-center-sm text-center-xs col-md-offset-0">
+          <div class="section-head">
+            <h3>Telescrap</h3>
+          </div>
+          <br>
+          <p>
+            This app allows you to scrap group members from other groups and make them your own. All you need are
+            telegram credentials which you can get <b><a href="https://my.telegram.org/auth?to=apps">here</a></b>
+            add them to your account within the app and start adding.
+            <br><br>
+            ✓ Stunning flexibility<br>
+            ✓ Add new menbers easily<br>
+            ✓ Reliable and Secure Platform<br>
+            ✓ Cool features and easy to use<br>
+            ✓ Add at least 2764 members per day<br>
+            ✓ Everything is perfectly orgainized for future<br><br>
+          </p>
+          <a href="/" class="btn btn-lg"><i class="fa fa-arrow-left"></i> Back Home</a>
+          <button onclick="download();" class="btn btn-lg col-md-offset-5"><i class="fa fa-cloud-download"></i>
+            Download</button>
+          <!-- App Content Ends -->
+        </section>
+      </div>
+    </div>
+    <!-- Nested Container Ends -->
+  </section>
+  <!-- About Section Ends -->
+
+  <div id="newsletter" class="modal fade">
+    <div class="modal-dialog modal-newsletter">
+      <div class="modal-content">
+        <form action="/examples/actions/confirmation.php" method="post">
+          <div class="modal-header">
+            <div class="icon-box">
+              <i class="fa fa-envelope-open-o"></i>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span>&times;</span></button>
+          </div>
+          <div class="modal-body text-center">
+            <h4>Get it now!</h4>
+            <p>This App is a limited edition. Free trial exclusively available to the first 50 users, leave your
+              email and I'll get back to you.</p>
+            <div class="input-group">
+              <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+              <span class="input-group-btn">
+                <input type="submit" class="btn btn-primary" value="Subscribe">
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{%endblock%}
+{%block custom_js%}
+<script type="text/javascript">
+  download = () => $('#newsletter').modal('show');
+</script>
+{%endblock%}
