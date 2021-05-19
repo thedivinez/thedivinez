@@ -223,7 +223,6 @@
 {%block custom_js%}
 <script type="text/javascript">
   download = () => $('#sales').modal('show');
-  $('#sales-form').validator();
   $('#sales-form').on('submit', function (e) {
     e.preventDefault();
     $.ajax({
