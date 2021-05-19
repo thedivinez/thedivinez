@@ -2,25 +2,25 @@
 
 {%block customcss %}
 <style>
-  .modal-newsletter {
+  .modal-sales {
     color: #999;
     font-size: 15px;
   }
 
-  .modal-newsletter .modal-content {
+  .modal-sales .modal-content {
     padding: 40px;
     border-radius: 0;
     border: none;
   }
 
-  .modal-newsletter .modal-header {
+  .modal-sales .modal-header {
     border-bottom: none;
     position: relative;
     text-align: center;
     border-radius: 5px 5px 0 0;
   }
 
-  .modal-newsletter h4 {
+  .modal-sales h4 {
     color: #000;
     text-align: center;
     font-size: 30px;
@@ -29,7 +29,7 @@
     text-transform: capitalize;
   }
 
-  .modal-newsletter .close {
+  .modal-sales .close {
     background: #c0c3c8;
     position: absolute;
     top: -15px;
@@ -43,16 +43,16 @@
     font-size: 16px;
   }
 
-  .modal-newsletter .close span {
+  .modal-sales .close span {
     position: relative;
     top: -1px;
   }
 
-  .modal-newsletter .close:hover {
+  .modal-sales .close:hover {
     opacity: 0.8;
   }
 
-  .modal-newsletter .icon-box {
+  .modal-sales .icon-box {
     color: #323333;
     display: inline-block;
     z-index: 9;
@@ -61,27 +61,27 @@
     margin-bottom: 10px;
   }
 
-  .modal-newsletter .icon-box i {
+  .modal-sales .icon-box i {
     font-size: 110px;
   }
 
-  .modal-newsletter .form-control,
-  .modal-newsletter .btn {
+  .modal-sales .form-control,
+  .modal-sales .btn {
     min-height: 46px;
     border-radius: 3px;
   }
 
-  .modal-newsletter .form-control {
+  .modal-sales .form-control {
     box-shadow: none;
     border-color: #dbdbdb;
   }
 
-  .modal-newsletter .form-control:focus {
+  .modal-sales .form-control:focus {
     border-color: #323333;
     box-shadow: 0 0 8px rgba(59, 59, 61, 0.5);
   }
 
-  .modal-newsletter .btn {
+  .modal-sales .btn {
     color: #fff;
     border-radius: 4px;
     background: #323333;
@@ -93,13 +93,13 @@
     border: none;
   }
 
-  .modal-newsletter .btn:hover,
-  .modal-newsletter .btn:focus {
+  .modal-sales .btn:hover,
+  .modal-sales .btn:focus {
     background: #494949;
     outline: none;
   }
 
-  .modal-newsletter .input-group {
+  .modal-sales .input-group {
     margin: 30px 0 15px;
   }
 
@@ -118,38 +118,6 @@
 {%endblock%}
 
 {%block content %}
-<!-- ====== Navgition ======  -->
-<nav class="navbar navbar-default">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-icon-collapse"
-        aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <!-- logo -->
-      <a class="logo" href="#">Divine</a>
-
-    </div>
-
-    <!-- Collect the nav links, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="nav-icon-collapse">
-
-      <!-- links -->
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" data-scroll-nav="0" class="active">Home</a></li>
-        <li><a href="#" data-scroll-nav="1">About</a></li>
-        <li><a href="#" data-scroll-nav="2">Services</a></li>
-        <li><a href="#" data-scroll-nav="3">Portfolio</a></li>
-        <li><a href="#" data-scroll-nav="6">Contact</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container -->
-</nav>
-<!-- ====== End Navgition ======  -->
 <section style="margin:3%;">
   <!-- About Section Starts -->
   <section class="section-padding">
@@ -224,15 +192,16 @@
   </section>
   <!-- About Section Ends -->
 
-  <div id="newsletter" class="modal fade">
-    <div class="modal-dialog modal-newsletter">
+  <div id="sales" class="modal fade">
+    <div class="modal-dialog modal-sales">
       <div class="modal-content">
-        <form action="/examples/actions/confirmation.php" method="post">
+        <form id="sales-form">
           <div class="modal-header">
             <div class="icon-box">
               <i class="fa fa-envelope-open-o"></i>
             </div>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span>&times;</span></button>
+            <button id="btnClose" type="button" class="close" data-dismiss="modal"
+              aria-hidden="true"><span>&times;</span></button>
           </div>
           <div class="modal-body text-center">
             <h4>Get it now!</h4>
@@ -253,6 +222,21 @@
 {%endblock%}
 {%block custom_js%}
 <script type="text/javascript">
-  download = () => $('#newsletter').modal('show');
+  download = () => $('#sales').modal('show');
+  $('#sales-form').validator();
+  $('#sales-form').on('submit', function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "/sale",
+      data: $('#sales-form').serialize(),
+      success: (data) => {
+        document.getElementById("response_message").textContent = data.message;
+        document.getElementById("btnClose").click();
+        $("#success_modal").modal();
+        $('#sales-form')[0].reset();
+      }
+    });
+  });
 </script>
 {%endblock%}
