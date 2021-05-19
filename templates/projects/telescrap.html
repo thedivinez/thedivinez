@@ -227,7 +227,7 @@
     e.preventDefault();
     $.ajax({
       type: "POST",
-      url: "/sale",
+      url: "/createsale",
       data: $('#sales-form').serialize(),
       success: (data) => {
         document.getElementById("response_message").textContent = data.message;
