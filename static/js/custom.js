@@ -147,18 +147,14 @@ $(function () {
 });
 
 $(window).on("load", function () {
-
     // Preloader
     $(".loading").addClass("loading-end").fadeOut(1000);
-
 
     // isotope
     $('.services .row').isotope({
         // options
         itemSelector: '.col-md-4'
     });
-
-
     // isotope
     $('.gallery').isotope({
         // options
@@ -171,24 +167,14 @@ $(window).on("load", function () {
 
     // filter items on button click
     $('.filtering').on('click', 'span', function () {
-
         var filterValue = $(this).attr('data-filter');
-
         $gallery.isotope({ filter: filterValue });
-
     });
 
     $('.filtering').on('click', 'span', function () {
-
         $(this).addClass('active').siblings().removeClass('active');
-
     });
-
-
-
     // contact form
-    $('#contact-form').validator();
-
     $('#contact-form').on('submit', function (e) {
         e.preventDefault();
         $.ajax({
