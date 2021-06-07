@@ -1,6 +1,7 @@
-from flask import Blueprint
+from config.source import table
 from api.processor import Engine
-from flask.globals import request
+from os import path, walk, getcwd
+from flask import Blueprint, request
 from flask import render_template as show
 
 web = Blueprint(__name__, "web")
@@ -8,7 +9,8 @@ web = Blueprint(__name__, "web")
 
 @web.route("/")
 def index():
-  return show("main.html"), 200
+  portfoliodata = table.configs.find_one({"section": "portfolio"}, {"_id": 0})
+  return show("main.html", portfoliodata=portfoliodata.get("portfolio")), 200
 
 
 @web.route("/apps/<target>", methods=["GET"])
