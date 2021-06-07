@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>WhatsApp Contacts</title>
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800" rel="stylesheet">
+  <!-- Font Icon Core CSS -->
+  <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../static/css/et-line.css">
+  <!-- Core Style Css -->
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding-bottom: 3rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #input {
+      border: none;
+      padding: 0 1rem;
+      flex-grow: 1;
+      border-radius: 2rem;
+      margin: 0.25rem;
+    }
+
+    #input:focus {
+      outline: none;
+    }
+
+    .main_box {
+      width: 15em;
+      height: 15em;
+      position: relative;
+    }
+
+    .i-am-centered {
+      max-width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .img {
+      filter: grayscale(100%);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- About Section Starts -->
+  <section class="section-padding">
+    <!-- Nested Container Starts -->
+    <div class="container">
+      <div class="row">
+        <!-- Phone Mockup Starts -->
+        <section class="col-md-4 text-center-sm text-center-xs ">
+          <div class="col-sm-6" style="margin-top: 30%;">
+            <img id="qrcode" class="img main_box" alt="" src="../static/img/store/whatscontacts/qr.jpg" />
+            <br><br>
+            <h6 style="margin-left: 20%;"><b>Scan QR Code</b></h6>
+          </div>
+        </section>
+        <!-- App Content Starts -->
+        <section class="col-md-6 col-xs-12 ">
+          <div class="section-head">
+            <h3>Save WhatsApp Contacts</h3>
+          </div>
+          <br>
+          <p>
+            This app allows you to download unsaved contacts from your whatsapp and give you a <b>contacts.vcf</b> file
+            which
+            you can use to save the contacts to your phone.
+            <br><br>
+            1. Enter Name Suffix <br>
+            2. Click the Start button<br>
+            3. Open WhatsApp and scan QR Code<br>
+            4. Click the download button<br>
+            5. Copy the <b>contacts.vcf</b> file to your phone<br>
+            6. Open the file in your phone and import contacts<br>
+            7. All done you can see the contacts in your phonebook<br><br>
+          </p>
+          <form id="form" class="form">
+            <div class="form-group">
+              <label for="suffix" class="pull-left" style="margin-top: 1%;margin-left:1%;">Name Suffix :</label>
+              <div class="col-xs-9" style="margin-bottom:4%;">
+                <input type="text" class="form-control" id="suffix" placeholder="Name Suffix"
+                  aria-describedby="passwordHelpBlock">
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                  Optional, describes how the contact name ends e.g thedivinez_CONT1
+                </small>
+              </div>
+            </div>
+            <button id="submit" type="submit" class="btn btn-lg"><i class="fa fa-play-circle disabled"></i>
+              Start</button>
+            <button id="btnDownload" class="btn btn-lg col-md-offset-5"><i class="fa fa-cloud-download disabled"></i>
+              Download</button>
+          </form>
+          <!-- App Content Ends -->
+        </section>
+      </div>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"
+    integrity="sha512-eVL5Lb9al9FzgR63gDs1MxcDS2wFu3loYAgjIH0+Hg38tCS8Ag62dwKyH+wzDb+QauDpEZjXbMn11blw8cbTJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    let contacts = "";
+    var socket = io.connect("http://localhost:5000");
+    var form = document.getElementById('form');
+    var input = document.getElementById('suffix');
+    var startButton = document.getElementById("submit");
+    var downloadBTN = document.getElementById("btnDownload");
+    downloadBTN.disabled = true;
+
+    function download(text) {
+      var element = document.createElement('a');
+      element.setAttribute('href', 'data:text/vcard;charset=utf-8,' + encodeURIComponent(text));
+      element.setAttribute('download', "contacts.vcf");
+      element.style.display = 'none';
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      startButton.disabled = true;
+      startButton.innerHTML = '<i class="fa fa-spinner disabled"></i> Requesting ...';
+      socket.emit('start', { suffix: input.value == "" ? "CONT" : input.value });
+    });
+
+    socket.on('qrsuccess', (data) => {
+      downloadBTN.disabled = false;
+      contacts = data.contacts;
+      document.getElementById("qrcode").src = "../static/img/store/whatscontacts/qr.jpg";
+    });
+
+    downloadBTN.addEventListener("click", function () {
+      download(contacts);
+      downloadBTN.disabled = true;
+      startButton.disabled = false;
+      startButton.innerHTML = '<i class="fa fa-play-circle"></i> Start';
+    }, false);
+
+    socket.on('qrcode', (qrcode) => {
+      document.getElementById("qrcode").src = qrcode;
+      startButton.innerHTML = '<i class="fa fa-check-circle disabled"></i> Completed';
+    });
+
+    socket.on('disconnect', (qrcode) => {
+      document.getElementById("qrcode").src = "../static/img/store/whatscontacts/qr.jpg";
+    });
+
+  </script>
+</body>
+
+</html>
