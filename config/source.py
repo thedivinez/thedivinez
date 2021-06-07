@@ -80,3 +80,5 @@ def siteconfigs():
   }
   table.configs.delete_many({})
   table.configs.insert_one(data)
+  portfoliodata = table.configs.find_one({"section": "portfolio"}, {"_id": 0})
+  print(portfoliodata)

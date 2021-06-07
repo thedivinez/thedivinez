@@ -10,7 +10,7 @@ web = Blueprint(__name__, "web")
 @web.route("/")
 def index():
   portfoliodata = table.configs.find_one({"section": "portfolio"}, {"_id": 0})
-  return show("main.html", portfoliodata=portfoliodata.get("portfolio")), 200
+  return show("main.html", portfoliodata=portfoliodata.get("data")), 200
 
 
 @web.route("/apps/<target>", methods=["GET"])
