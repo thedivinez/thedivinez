@@ -8,7 +8,6 @@ tmp = os.path.join(os.getcwd(), "templates")
 config = dotenv_values(os.path.join(os.getcwd(), ".env"))
 app = Flask(__name__, template_folder=tmp, static_folder=stc)
 table = pymongo.MongoClient(config.get("MONGO_URL")).thedivinez
-#table = pymongo.MongoClient().thedivinez
 socket = SocketIO(app)
 
 
