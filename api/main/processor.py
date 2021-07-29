@@ -9,6 +9,9 @@ class Engine:
   def messages():
     return list(table.messages.find({}, {"_id": 0}))
 
+  def store():
+    return {}
+
   def newmessage():
     message = dict(request.form)
     datetimenow = Engine.todaydate()

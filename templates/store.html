@@ -1,0 +1,107 @@
+{%extends "layout.html"%}
+{%block customcss %}
+<link rel='stylesheet' href='../static/css/default.css'>
+<link rel='stylesheet' href='../static/css/storestyle.css'>
+{%endblock%}
+{%block content %}
+<!-- ====== Navgition ======  -->
+<nav class="navbar navbar-fixed-top" style="background-color: white;">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-icon-collapse"
+        aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- logo -->
+      <a class="logo" style="color: black;" href="#">Divine</a>
+
+    </div>
+
+    <!-- Collect the nav links, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="nav-icon-collapse">
+
+      <!-- links -->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" data-scroll-nav="0" class="active">Home</a></li>
+        <li><a href="#" data-scroll-nav="1">About</a></li>
+        <li><a href="#" data-scroll-nav="2">Services</a></li>
+        <li><a href="#" data-scroll-nav="3">Portfolio</a></li>
+        <li><a href="#" data-scroll-nav="6">Contact</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
+<!-- ====== End Navgition ======  -->
+<section class="section-padding bg-gray text-center pb-70" id="live-demo" style="background: #F8F9FA;padding: 120px 0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2>All Demo</h2>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="demo-item wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.4s">
+          <a href="#">
+            <img class="img-fluid" src="../static/img/store/apps/loader.gif"
+              data-src="../static/img/store/apps/home-2.jpg" alt="home-2">
+          </a>
+          <h5>Business</h5>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="demo-item wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.6s">
+          <a href="#">
+            <img class="img-fluid" src="../static/img/store/apps/loader.gif"
+              data-src="../static/img/store/apps/home-3.jpg" alt="home-3">
+          </a>
+          <h5>Portfolio</h5>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="demo-item wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.8s">
+          <a href="#">
+            <img class="img-fluid" src="../static/img/store/apps/loader.gif"
+              data-src="../static/img/store/apps/home-4.jpg" alt="home-4">
+          </a>
+          <h5>IT Solutions</h5>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="demo-item wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.8s">
+          <a href="#">
+            <img class="img-fluid" src="../static/img/store/apps/loader.gif"
+              data-src="../static/img/store/apps/home-5.jpg" alt="home-5">
+          </a>
+          <h5>Consulting</h5>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="demo-item wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.8s">
+          <a href="#">
+            <img class="img-fluid" src="../static/img/store/apps/loader.gif"
+              data-src="../static/img/store/apps/home-6.jpg" alt="home-6">
+          </a>
+          <h5>App Landing</h5>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="demo-item wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.8s">
+          <span>New</span>
+          <a href="#">
+            <img class="img-fluid" src="../static/img/store/apps/loader.gif"
+              data-src="../static/img/store/apps/home-9.jpg" alt="home-9">
+          </a>
+          <h5>App Store (Marketplace)</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%endblock%}
+{%block custom_js%}
+<script src='../static/js/plugins.js'></script>
+<script src='../static/js/main.js'></script>
+{%endblock%}

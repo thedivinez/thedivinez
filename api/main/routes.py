@@ -1,7 +1,7 @@
+from os import  getcwd
 from config.source import table
-from api.processor import Engine
-from os import path, walk, getcwd
 from flask import Blueprint, request
+from api.main.processor import Engine
 from flask import render_template as show
 
 web = Blueprint(__name__, "web")
@@ -20,5 +20,5 @@ def gotopage(target):
 
 @web.route("/<target>", methods=["GET", "POST"])
 def decidewhattodo(target):
-  func = getattr(Engine, target)
+  func = getattr(Engine, target) if not target == "favicon.ico" else getcwd
   return func() if request.method == "POST" else show(f"{target}.html", data=func())
