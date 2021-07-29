@@ -1,7 +1,7 @@
 from os import  getcwd
 from config.source import table
 from flask import Blueprint, request
-from api.main.processor import Engine
+from main.processor import Engine
 from flask import render_template as show
 
 web = Blueprint(__name__, "web")
