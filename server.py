@@ -5,8 +5,8 @@ from config.source import table
 from main.processor import Engine
 from flask_compress import Compress
 from config.source import app, socket
+from telejoiner.main import TeleJoiner
 from flask import render_template as show
-from api.telejoiner.main import TeleJoiner
 
 CORS(app)
 Compress(app)
