@@ -19,14 +19,6 @@ def all_exception_handler(error):
     return render_template('404.html')
 
 
-def siteconfigs():
-    data = json.loads(open(os.path.join(os.getcwd(), "config", "pages.json")))
-    thedivinez_db.configs.delete_many({})
-    thedivinez_db.configs.insert_one(data)
-    portfoliodata = thedivinez_db.configs.find_one({"section": "portfolio"}, {"_id": 0})
-    print(portfoliodata)
-
-
 class ServerConfig:
     @staticmethod
     def sendlogs(username, message):
@@ -53,3 +45,11 @@ class ServerConfig:
     def run_in_background(function, *args, **kwargs):
         """creates a background task on a seperate thread enabling concurrency"""
         threading.Thread(target=function, args=args, kwargs=kwargs).start()
+
+    @staticmethod
+    def siteconfigs():
+        data = json.loads(open(os.path.join(os.getcwd(), "config", "pages.json")))
+        thedivinez_db.configs.delete_many({})
+        thedivinez_db.configs.insert_one(data)
+        portfoliodata = thedivinez_db.configs.find_one({"section": "portfolio"}, {"_id": 0})
+        print(portfoliodata)
