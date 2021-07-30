@@ -1,15 +1,11 @@
 from os import getcwd
 from flask import request
-from flask_cors import CORS
 from main.processor import Engine
-from flask_compress import Compress
 from config.source import app, socket
 from telejoiner.main import TeleJoiner
 from config.source import thedivinez_db
 from flask import render_template as show
 
-CORS(app)
-Compress(app)
 socket.on_namespace(TeleJoiner(namespace="/telejoiner"))
 
 
