@@ -1,6 +1,7 @@
 from functools import wraps
 from dotenv import dotenv_values
 from flask_socketio import SocketIO
+from flask_compress import Compress
 import os, asyncio, pymongo, threading
 from flask import Flask, render_template, json
 
@@ -10,6 +11,8 @@ config = dotenv_values(os.path.join(os.getcwd(), ".env"))
 app = Flask(__name__, template_folder=tmp, static_folder=stc)
 telescap_db = pymongo.MongoClient(config.get("MONGO_URL")).telescap
 thedivinez_db = pymongo.MongoClient(config.get("MONGO_URL")).thedivinez
+
+Compress(app)
 socket = SocketIO(app)
 socket.init_app(app, cors_allowed_origins="*")
 
