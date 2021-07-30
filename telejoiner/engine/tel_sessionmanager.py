@@ -1,6 +1,6 @@
+from config.source import telescap_db
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
-from telejoiner.config.source import dbcursor
 from telejoiner.engine.tel_accounts import TelegramAccounts
 
 
@@ -13,14 +13,14 @@ class SessionManager:
 
     @property
     def session(self):
-        return dbcursor.sessions.find_one({"phone": self.phone})["session"]
+        return telescap_db.sessions.find_one({"phone": self.phone})["session"]
 
     @property
     def client(self) -> TelegramClient:
         return TelegramClient(StringSession(self.session), self.api_id, self.api_hash)
 
     def deleteSession(self):
-        dbcursor.sessions.delete_one({"phone": self.phone})
+        telescap_db.sessions.delete_one({"phone": self.phone})
         return TelegramAccounts.deletetelegramaccount({"phone": self.phone})
 
     def createSession(self):
@@ -37,7 +37,7 @@ class SessionManager:
             client = self.client
             client.connect()
             self.client.sign_in(self.phone, int(self.data["code"]), phone_code_hash=self.data["code_hash"])
-            dbcursor.sessions.insert_one({"phone": self.phone, "session": client.session.save()})
+            telescap_db.sessions.insert_one({"phone": self.phone, "session": client.session.save()})
             del self.data["code"]
             del self.data["code_hash"]
             return TelegramAccounts.addtelegramaccount(self.data)

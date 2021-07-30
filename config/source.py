@@ -1,13 +1,15 @@
-import os, pymongo
+from functools import wraps
 from dotenv import dotenv_values
 from flask_socketio import SocketIO
-from flask import Flask, render_template
+import os, asyncio, pymongo, threading
+from flask import Flask, render_template, json
 
 stc = os.path.join(os.getcwd(), "static")
 tmp = os.path.join(os.getcwd(), "templates")
 config = dotenv_values(os.path.join(os.getcwd(), ".env"))
 app = Flask(__name__, template_folder=tmp, static_folder=stc)
-table = pymongo.MongoClient(config.get("MONGO_URL")).thedivinez
+telescap_db = pymongo.MongoClient(config.get("MONGO_URL")).telescap
+thedivinez_db = pymongo.MongoClient(config.get("MONGO_URL")).thedivinez
 socket = SocketIO(app)
 
 
@@ -18,68 +20,36 @@ def all_exception_handler(error):
 
 
 def siteconfigs():
-    data = {
-        "section":
-        "portfolio",
-        "data": [
-            {
-                "subsection": "web",
-                "title": "COVID-19 SELF-SCREENING BOT",
-                "image": "../static/img/portfolio/covidbot.png",
-                "link": "https://covidscreen.herokuapp.com"
-            },
-            {
-                "subsection": "web",
-                "title": "SPORT SHOES WEBSITE",
-                "image": "../static/img/portfolio/sportshoes.jpg",
-                "link": "#"
-            },
-            {
-                "subsection": "web",
-                "title": "FULLY RESPONSIVE WEBSITE",
-                "image": "../static/img/portfolio/responsive.jpg",
-                "link": "#"
-            },
-            {
-                "subsection": "mobile",
-                "title": "PHOTOCO MOBILE APP",
-                "image": "../static/img/portfolio/photoco.jpg",
-                "link": "#"
-            },
-            {
-                "subsection": "mobile",
-                "title": "CUSTOM SERVICES APP",
-                "image": "../static/img/portfolio/servicesapp.jpg",
-                "link": "#"
-            },
-            {
-                "subsection": "mobile",
-                "subsection": "marketing",
-                "title": "DIGITAL MARKETING",
-                "image": "../static/img/portfolio/digitalm.jpg",
-                "link": "#"
-            },
-            {
-                "subsection": "mobile",
-                "title": "MOBILE APP DEVELOPMENT",
-                "image": "../static/img/portfolio/appdev.jpg",
-                "link": "#"
-            },
-            {
-                "subsection": "web",
-                "title": "ART & PHOTOGRAPHY WEBSITE",
-                "image": "../static/img/portfolio/art.jpg",
-                "link": "#"
-            },
-            {
-                "subsection": "web",
-                "title": "DOCTOR MANAGEMENT WEBSITE",
-                "image": "../static/img/portfolio/doctor.png",
-                "link": "#"
-            },
-        ]
-    }
-    table.configs.delete_many({})
-    table.configs.insert_one(data)
-    portfoliodata = table.configs.find_one({"section": "portfolio"}, {"_id": 0})
+    data = json.loads(open(os.path.join(os.getcwd(), "config", "pages.json")))
+    thedivinez_db.configs.delete_many({})
+    thedivinez_db.configs.insert_one(data)
+    portfoliodata = thedivinez_db.configs.find_one({"section": "portfolio"}, {"_id": 0})
     print(portfoliodata)
+
+
+class ServerConfig:
+    @staticmethod
+    def sendlogs(username, message):
+        """send logs to the client making sure they stay updated"""
+        print(message)
+        socket.emit("process_status", message, room=username, namespace="/telejoiner")
+
+    @staticmethod
+    def asynchronous(function):
+        """creates an eventloop for incoming requests or reuses existing event loop"""
+        @wraps(function)
+        def wrapped(*args, **kwargs):
+            try:
+                loop = asyncio.get_running_loop()
+                print(">> using existing event loop <<")
+                return loop.create_task(function(*args, **kwargs))
+            except RuntimeError:
+                print(">> creating new event loop <<")
+                return asyncio.run(function(*args, **kwargs))
+
+        return wrapped
+
+    @staticmethod
+    def run_in_background(function, *args, **kwargs):
+        """creates a background task on a seperate thread enabling concurrency"""
+        threading.Thread(target=function, args=args, kwargs=kwargs).start()

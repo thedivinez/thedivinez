@@ -1,8 +1,8 @@
 import time, random
+from config.source import telescap_db, ServerConfig
 from telethon.tl.functions.channels import JoinChannelRequest
-from telejoiner.config.source import dbcursor, ServerConfig
-from telethon.tl.functions.messages import ImportChatInviteRequest
 from telejoiner.engine.tel_sessionmanager import SessionManager
+from telethon.tl.functions.messages import ImportChatInviteRequest
 
 
 class JoinEntities:
@@ -13,7 +13,7 @@ class JoinEntities:
 
     @property
     def targetAccounts(self):
-        return list(dbcursor.telegramaccounts.find({"username": self.username}, {"_id": 0}))
+        return list(telescap_db.telegramaccounts.find({"username": self.username}, {"_id": 0}))
 
     @ServerConfig.asynchronous
     async def joinTarget(self):

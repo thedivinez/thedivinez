@@ -1,4 +1,4 @@
-from telejoiner.config.source import dbcursor
+from config.source import dbcursor
 
 
 class TelegramAccounts:
