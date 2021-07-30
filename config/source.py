@@ -11,6 +11,7 @@ app = Flask(__name__, template_folder=tmp, static_folder=stc)
 telescap_db = pymongo.MongoClient(config.get("MONGO_URL")).telescap
 thedivinez_db = pymongo.MongoClient(config.get("MONGO_URL")).thedivinez
 socket = SocketIO(app)
+socket.init_app(app, cors_allowed_origins="*")
 
 
 @app.errorhandler(Exception)
