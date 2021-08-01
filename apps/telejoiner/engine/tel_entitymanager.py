@@ -1,8 +1,8 @@
 import time, random
 from config.source import telescap_db, ServerConfig
 from telethon.tl.functions.channels import JoinChannelRequest
-from telejoiner.engine.tel_sessionmanager import SessionManager
 from telethon.tl.functions.messages import ImportChatInviteRequest
+from apps.telejoiner.engine.tel_sessionmanager import SessionManager
 
 
 class JoinEntities:
@@ -17,8 +17,8 @@ class JoinEntities:
 
     @ServerConfig.asynchronous
     async def joinTarget(self):
-        ServerConfig.sendlogs(self.username, f"=== starting process ===")
         telegramaccounts = self.targetAccounts
+        ServerConfig.sendlogs(self.username, f"=== starting process ===")
         ServerConfig.sendlogs(self.username, f"=== targeting {len(telegramaccounts)} accounts ===")
         for account in telegramaccounts:
             try:

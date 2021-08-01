@@ -1,6 +1,6 @@
 from flask import request
 from config.source import ServerConfig as task
-from telejoiner.engine.instances import Instances
+from apps.telejoiner.engine.instances import Instances
 from flask_socketio import Namespace, join_room, leave_room
 
 

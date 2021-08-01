@@ -1,10 +1,10 @@
 from os import getcwd
 from flask import request
-from main.processor import Engine
 from config.source import app, socket
-from telejoiner.main import TeleJoiner
+from apps.main.processor import Engine
 from config.source import thedivinez_db
 from flask import render_template as show
+from apps.telejoiner.main import TeleJoiner
 
 socket.on_namespace(TeleJoiner(namespace="/telejoiner"))
 
@@ -17,7 +17,7 @@ def index():
 
 @app.route("/apps/<target>", methods=["GET"])
 def gotopage(target):
-    return show(f"projects/{target}.html"), 200
+    return show(f"apps/{target}.html")
 
 
 @app.route("/<target>", methods=["GET", "POST"])

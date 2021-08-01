@@ -9,9 +9,10 @@ stc = os.path.join(os.getcwd(), "static")
 tmp = os.path.join(os.getcwd(), "templates")
 config = dotenv_values(os.path.join(os.getcwd(), ".env"))
 app = Flask(__name__, template_folder=tmp, static_folder=stc)
-telescap_db = pymongo.MongoClient(config.get("MONGO_URL")).telescap
-thedivinez_db = pymongo.MongoClient(config.get("MONGO_URL")).thedivinez
-
+# telescap_db = pymongo.MongoClient(config.get("MONGO_URL")).telescap
+# thedivinez_db = pymongo.MongoClient(config.get("MONGO_URL")).thedivinez
+telescap_db = pymongo.MongoClient().telescap
+thedivinez_db = pymongo.MongoClient().thedivinez
 Compress(app)
 socket = SocketIO(app)
 socket.init_app(app, cors_allowed_origins="*")
@@ -52,8 +53,7 @@ class ServerConfig:
 
     @staticmethod
     def siteconfigs():
-        data = json.loads(open(os.path.join(os.getcwd(), "config", "pages.json")))
+        data = json.load(open(os.path.join(os.getcwd(), "config", "pages.json")))
         thedivinez_db.configs.delete_many({})
         thedivinez_db.configs.insert_one(data)
-        portfoliodata = thedivinez_db.configs.find_one({"section": "portfolio"}, {"_id": 0})
-        print(portfoliodata)
+        thedivinez_db.configs.find_one({"section": "portfolio"}, {"_id": 0})

@@ -1,7 +1,7 @@
 from config.source import telescap_db
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
-from telejoiner.engine.tel_accounts import TelegramAccounts
+from apps.telejoiner.engine.tel_accounts import TelegramAccounts
 
 
 class SessionManager:

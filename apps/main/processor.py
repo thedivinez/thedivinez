@@ -1,8 +1,8 @@
 from pytz import timezone
 from datetime import datetime
 from twilio.rest import Client
-from config.source import thedivinez_db
 from flask import request, jsonify
+from config.source import thedivinez_db
 
 
 class Engine:

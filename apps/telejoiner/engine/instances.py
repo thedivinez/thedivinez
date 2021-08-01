@@ -1,5 +1,5 @@
 from config.source import ServerConfig as task
-from telejoiner.engine.tel_entitymanager import JoinEntities
+from apps.telejoiner.engine.tel_entitymanager import JoinEntities
 
 
 class Instances:
