@@ -9,10 +9,10 @@ stc = os.path.join(os.getcwd(), "static")
 tmp = os.path.join(os.getcwd(), "templates")
 config = dotenv_values(os.path.join(os.getcwd(), ".env"))
 app = Flask(__name__, template_folder=tmp, static_folder=stc)
-# telescap_db = pymongo.MongoClient(config.get("MONGO_URL")).telescap
-# thedivinez_db = pymongo.MongoClient(config.get("MONGO_URL")).thedivinez
-telescap_db = pymongo.MongoClient().telescap
-thedivinez_db = pymongo.MongoClient().thedivinez
+telescap_db = pymongo.MongoClient(config.get("MONGO_URL")).telescap
+thedivinez_db = pymongo.MongoClient(config.get("MONGO_URL")).thedivinez
+#telescap_db = pymongo.MongoClient().telescap
+#thedivinez_db = pymongo.MongoClient().thedivinez
 Compress(app)
 socket = SocketIO(app)
 socket.init_app(app, cors_allowed_origins="*")
