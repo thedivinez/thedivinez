@@ -9,7 +9,7 @@ stc = os.path.join(os.getcwd(), "static")
 tmp = os.path.join(os.getcwd(), "templates")
 config = dotenv_values(os.path.join(os.getcwd(), ".env"))
 app = Flask(__name__, template_folder=tmp, static_folder=stc)
-dbcursor = pymongo.MongoClient(config.get("MONGO_URL"))
+dbcursor = pymongo.MongoClient(config.get("MONGODb"))
 telescap_db = dbcursor.telescap
 thedivinez_db = dbcursor.thedivinez
 #telescap_db = pymongo.MongoClient().telescap
