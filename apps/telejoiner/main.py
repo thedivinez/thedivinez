@@ -9,6 +9,9 @@ class TeleJoiner(Namespace, Instances):
         join_room(request.args["username"]) if request.args["username"] else True
         print(f"=== {request.args['username'] if request.args['username'] else 'new user'} connected ===")
 
+    def on_findgroups(self, account):
+        task.run_in_background(self.getgroups, account)
+
     def on_startjoining(self, account):
         task.run_in_background(self.startjoining, account)
 

@@ -32,6 +32,11 @@ class ServerConfig:
         socket.emit("process_status", message, room=username, namespace="/telejoiner")
 
     @staticmethod
+    def sendevent(username, event, message):
+        """send logs to the client making sure they stay updated"""
+        socket.emit(event, message, room=username, namespace="/telejoiner")
+
+    @staticmethod
     def asynchronous(function):
         """creates an eventloop for incoming requests or reuses existing event loop"""
         @wraps(function)
