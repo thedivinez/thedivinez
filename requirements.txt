@@ -1,4 +1,4 @@
-pymongo[srv]
+pymongo[tls,srv]
 Flask==2.0.1
 pytz==2019.3
 twilio==6.49.0
