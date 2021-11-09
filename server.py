@@ -1,12 +1,9 @@
 from os import getcwd
 from flask import request
-from config.source import app, socket
-from apps.main.processor import Engine
+from config.source import app
+from apps.processor import Engine
 from config.source import thedivinez_db
 from flask import render_template as show
-from apps.telejoiner.main import TeleJoiner
-
-socket.on_namespace(TeleJoiner(namespace="/telejoiner"))
 
 
 @app.route("/")
@@ -28,4 +25,4 @@ def decidewhattodo(target):
 
 # === start the server ===
 if __name__ == "__main__":
-    socket.run(app, debug=True)
+    app.run(debug=True)
