@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=220&section=header&text=Divine%20Mugariri&fontSize=60&fontColor=fff&animation=twinkling&fontAlignY=38&desc=Full-Stack%20Developer%20%7C%20Freelancer%20%7C%20Automation%20Engineer&descAlignY=58&descSize=18" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=220&section=header&text=Divine%20Zvenyika&fontSize=60&fontColor=fff&animation=twinkling&fontAlignY=38&desc=Senior%20Developer%20%7C%20Systems%20Architect%20%7C%20Fintech%20Engineer&descAlignY=58&descSize=18" width="100%" />
 </p>
 
 <p align="center">
   <a href="https://thedivinez.com">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=600&lines=Building+beautiful+web+experiences+%F0%9F%8C%90;Python+%7C+Go+%7C+TypeScript+developer+%F0%9F%9A%80;Automation+%26+Bot+Engineer+%F0%9F%A4%96;Available+for+freelance+work+%F0%9F%92%BC" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Senior+Developer+%26+Systems+Architect+%F0%9F%8F%97%EF%B8%8F;Building+Trading+Platforms+%26+Crypto+Exchanges+%F0%9F%92%B9;Go+%7C+Python+%7C+TypeScript+%E2%80%94+Production-Grade+Systems+%F0%9F%9A%80;Fintech+%7C+Payments+%7C+Real-Time+Infrastructure+%E2%9A%A1;Designing+Scalable%2C+High-Performance+Architectures+%F0%9F%94%A7" alt="Typing SVG" />
   </a>
 </p>
 
@@ -12,13 +12,16 @@
 
 ## 👨‍💻 About Me
 
-Hey there! I'm **Divine** — a passionate full-stack developer and freelancer based in **Zimbabwe 🇿🇼**, building polished web apps, automation systems, and intelligent bots for clients across the globe.
+I'm **Divine Zvenyika** — a Senior Developer and Systems Architect based in **Zimbabwe 🇿🇼**, with deep expertise in designing and building high-performance, production-grade systems. My work spans fintech infrastructure, trading platforms, crypto exchanges, real-time payment engines, and scalable web systems.
 
-- 🔭 &nbsp; Currently building **full-stack apps** with Python, Go & TypeScript
-- 🤖 &nbsp; Crafting **WhatsApp / Telegram bots** and web automation tools
-- 🌐 &nbsp; Designing **custom websites** for businesses and brands
-- 🏗️ &nbsp; Exploring **Go + HTMX + Templ** for modern, lightweight web stacks
-- 💼 &nbsp; Open to **freelance projects** — reach out and let's build something great
+I don't just write code — I architect systems that handle real money, real trades, and real users at scale.
+
+- 🏗️ &nbsp; **Systems Architect** — designing distributed, fault-tolerant, event-driven architectures
+- 💹 &nbsp; **Trading Platforms & Crypto Exchanges** — building order books, transaction engines, and exchange backends
+- 💳 &nbsp; **Payment Infrastructure** — engineering payment gateways, wallet systems, and financial transaction layers
+- ⚡ &nbsp; **Go + HTMX + Templ** — production server stacks with real-time capabilities and zero-JS overhead
+- 🔐 &nbsp; **Security-First** — session management, auth flows, API security, and data integrity in financial systems
+- 🌍 &nbsp; **Full-Stack** — end-to-end ownership from database schema to pixel-perfect UI
 - 📍 &nbsp; Based in **Harare, Zimbabwe**
 
 ---
@@ -27,65 +30,85 @@ Hey there! I'm **Divine** — a passionate full-stack developer and freelancer b
 
 ### Languages
 <p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
 </p>
 
-### Frameworks & Libraries
+### Frameworks & Runtimes
 <p>
-  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" />
   <img src="https://img.shields.io/badge/Echo_(Go)-00ADD8?style=for-the-badge&logo=go&logoColor=white" />
-  <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" />
   <img src="https://img.shields.io/badge/HTMX-3D72D7?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/Templ-00ADD8?style=for-the-badge&logo=go&logoColor=white" />
+  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" />
   <img src="https://img.shields.io/badge/Socket.IO-010101?style=for-the-badge&logo=socket.io&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white" />
 </p>
 
-### Databases & Cloud
+### Databases & Data Layer
 <p>
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
-  <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" />
-  <img src="https://img.shields.io/badge/Gunicorn-499848?style=for-the-badge&logo=gunicorn&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
+  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" />
 </p>
 
-### Tools & Automation
+### Infrastructure & DevOps
 <p>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
+  <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" />
+  <img src="https://img.shields.io/badge/Gunicorn-499848?style=for-the-badge&logo=gunicorn&logoColor=white" />
+  <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" />
+</p>
+
+### Fintech & Integration
+<p>
+  <img src="https://img.shields.io/badge/Payment_Engines-00897B?style=for-the-badge&logo=stripe&logoColor=white" />
+  <img src="https://img.shields.io/badge/Crypto_Exchange_APIs-F7931A?style=for-the-badge&logo=bitcoin&logoColor=white" />
+  <img src="https://img.shields.io/badge/WebSockets-010101?style=for-the-badge&logo=socket.io&logoColor=white" />
   <img src="https://img.shields.io/badge/Twilio-F22F46?style=for-the-badge&logo=twilio&logoColor=white" />
   <img src="https://img.shields.io/badge/Telegram_API-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" />
-  <img src="https://img.shields.io/badge/BeautifulSoup-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white" />
-  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/REST_APIs-FF6C37?style=for-the-badge&logo=postman&logoColor=white" />
 </p>
 
 ---
 
-## 🚀 Featured Projects
+## 🚀 Signature Projects
 
-| Project | Description | Stack |
-|--------|-------------|-------|
-| [**gothex**](https://github.com/thedivinez/gothex) | Full-stack app with Go Echo, HTMX, Templ & Tailwind CSS. Session management + hot reload. | Go, HTMX, Tailwind |
-| [**smartpay**](https://github.com/thedivinez/smartpay) | Backend for a smart payments platform | Python, Flask |
-| [**youtubedownloadbot**](https://github.com/thedivinez/youtubedownloadbot) | WhatsApp bot to download music (MP3/MP4) from YouTube | Python |
-| [**botfomulla**](https://github.com/thedivinez/botfomulla) | Framework for building dynamic chatbots | CSS, JS |
-| [**pocketvault**](https://github.com/thedivinez/pocketvault) | Vault/dashboard application | Go (Templ) |
-| [**financial-flag-icons**](https://github.com/thedivinez/financial-flag-icons) | Financial flag icon library | TypeScript |
-| [**suppliersorg**](https://github.com/thedivinez/suppliersorg) | Automated supplier discovery from online directories | Python |
-| [**kudzi-web**](https://github.com/thedivinez/kudzi-web) | Portfolio website | TypeScript |
+| Project | What It Is | Stack |
+|--------|------------|-------|
+| [**gothex**](https://github.com/thedivinez/gothex) | Production-ready crypto exchange / trading platform framework — Go Echo backend, HTMX frontend, Templ templating, Tailwind CSS, session auth & hot reload | Go, HTMX, Templ, Tailwind |
+| [**go-libs**](https://github.com/thedivinez/go-libs) | Internal Go library suite powering gothex — router engine, session management, socket.io integration, storage adapters & utilities | Go |
+| [**smartpay**](https://github.com/thedivinez/smartpay) | SmartPay — a full payment platform backend with transaction engine, wallet accounts, deposits/withdrawals/transfers, real-time socket events, auth & security layers | Python, Flask, MongoDB |
+| [**pocketvault**](https://github.com/thedivinez/pocketvault) | Financial vault & dashboard — secure asset management UI | Go, Templ, TypeScript |
+| [**pocketvault-dash**](https://github.com/thedivinez/pocketvault-dash) | Pocketvault dashboard component layer | Templ, Go |
+| [**financial-flag-icons**](https://github.com/thedivinez/financial-flag-icons) | Open-source financial & currency flag icon library used in trading UIs | TypeScript |
+| [**botfomulla**](https://github.com/thedivinez/botfomulla) | Framework for building dynamic, rule-driven chatbots | JS, CSS |
+| [**youtubedownloadbot**](https://github.com/thedivinez/youtubedownloadbot) | WhatsApp bot — MP3/MP4 downloads from YouTube via chat | Python |
+| [**suppliersorg**](https://github.com/thedivinez/suppliersorg) | Automated B2B supplier discovery engine from online directories | Python |
+| [**kudzi-web**](https://github.com/thedivinez/kudzi-web) | Polished portfolio website | TypeScript |
 
 ---
 
-## 💼 What I Do for Clients
+## 🏛️ Systems Architecture Domains
 
 ```
-✅ Custom Business Websites       ✅ Web Scraping & Automation
-✅ WhatsApp & Telegram Bots       ✅ REST API Development
-✅ Full-Stack Web Applications    ✅ Database Design (MongoDB)
-✅ Real-Time Apps (Socket.IO)     ✅ Server Setup & Deployment
+╔══════════════════════════════════════════════════════════════════╗
+║                  AREAS OF ARCHITECTURAL EXPERTISE                ║
+╠══════════════════════════════════════════════════════════════════╣
+║  💹  Trading Platforms          ║  🔐  Auth & Session Systems    ║
+║  ₿   Crypto Exchange Backends   ║  ⚙️   Transaction Engines       ║
+║  💳  Payment Gateways & Wallets ║  📡  Real-Time WebSocket Infra  ║
+║  🗄️   Database Architecture      ║  🐳  Containerised Deployments  ║
+║  🌐  Full-Stack Web Systems     ║  🤖  Automation & Bot Systems   ║
+╚══════════════════════════════════════════════════════════════════╝
 ```
 
 ---
@@ -93,7 +116,7 @@ Hey there! I'm **Divine** — a passionate full-stack developer and freelancer b
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=thedivinez&show_icons=true&theme=tokyonight&count_private=true&include_all_commits=true&hide_border=true" height="165" />
+  <img src="https://github-readme-stats.vercel.app/api?username=thedivinez&show_icons=true&theme=tokyonight&count_private=true&include_all_commits=true&hide_border=true&show=reviews,discussions_started,prs_merged" height="165" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=thedivinez&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" height="165" />
 </p>
 
@@ -102,7 +125,7 @@ Hey there! I'm **Divine** — a passionate full-stack developer and freelancer b
 </p>
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=thedivinez&theme=tokyonight&no-frame=true&row=1&column=6" />
+  <img src="https://github-profile-trophy.vercel.app/?username=thedivinez&theme=tokyonight&no-frame=true&row=1&column=7" />
 </p>
 
 ---
@@ -124,7 +147,7 @@ Hey there! I'm **Divine** — a passionate full-stack developer and freelancer b
 </p>
 
 <p align="center">
-  <i>⚡ Open for freelance — <b>let's build something amazing together!</b></i>
+  <i>🏗️ Senior Developer & Systems Architect — <b>building the infrastructure that powers real financial systems.</b></i>
 </p>
 
 <p align="center">
