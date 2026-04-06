@@ -84,9 +84,9 @@ I don't just write code — I architect systems that handle real money, real tra
 
 | Project | What It Is | Stack |
 |--------|------------|-------|
-| [**gothex**](https://github.com/thedivinez/gothex) | Production-ready crypto exchange / trading platform framework — Go Echo backend, HTMX frontend, Templ templating, Tailwind CSS, session auth & hot reload | Go, HTMX, Templ, Tailwind |
-| [**go-libs**](https://github.com/thedivinez/go-libs) | Internal Go library suite powering gothex — router engine, session management, socket.io integration, storage adapters & utilities | Go |
-| [**smartpay**](https://github.com/thedivinez/smartpay) | SmartPay — a full payment platform backend with transaction engine, wallet accounts, deposits/withdrawals/transfers, real-time socket events, auth & security layers | Python, Flask, MongoDB |
+| [**gothex**](https://github.com/thedivinez/gothex) | Crypto exchange / trading platform framework — Go Echo + HTMX + Templ, with session auth & hot reload | Go, HTMX, Templ, Tailwind |
+| [**go-libs**](https://github.com/thedivinez/go-libs) | Internal Go library suite — router engine, session management, socket.io integration & storage adapters | Go |
+| [**smartpay**](https://github.com/thedivinez/smartpay) | Payment platform backend — transaction engine, wallet management, deposits/withdrawals/transfers & real-time events | Python, Flask, MongoDB |
 | [**pocketvault**](https://github.com/thedivinez/pocketvault) | Financial vault & dashboard — secure asset management UI | Go, Templ, TypeScript |
 | [**pocketvault-dash**](https://github.com/thedivinez/pocketvault-dash) | Pocketvault dashboard component layer | Templ, Go |
 | [**financial-flag-icons**](https://github.com/thedivinez/financial-flag-icons) | Open-source financial & currency flag icon library used in trading UIs | TypeScript |
