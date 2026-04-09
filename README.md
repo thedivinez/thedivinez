@@ -80,20 +80,17 @@ I don't just write code — I architect systems that handle real money, real tra
 
 ---
 
-## 🚀 Signature Projects
+## 📂 Public Repositories
 
-| Project | What It Is | Stack |
-|--------|------------|-------|
+> **Note:** The majority of my production work — live trading platforms, fintech backends, crypto exchange systems, and client infrastructure — lives in **private repositories and organisation accounts** due to commercial and confidentiality requirements. What's shown here is a selection of open-source or exploratory work made public.
+
+| Repository | What It Is | Stack |
+|-----------|------------|-------|
 | [**gothex**](https://github.com/thedivinez/gothex) | Crypto exchange / trading platform framework — Go Echo + HTMX + Templ, with session auth & hot reload | Go, HTMX, Templ, Tailwind |
-| [**go-libs**](https://github.com/thedivinez/go-libs) | Internal Go library suite — router engine, session management, socket.io integration & storage adapters | Go |
+| [**go-libs**](https://github.com/thedivinez/go-libs) | Shared Go library suite — router engine, session management, socket.io integration & storage adapters | Go |
 | [**smartpay**](https://github.com/thedivinez/smartpay) | Payment platform backend — transaction engine, wallet management, deposits/withdrawals/transfers & real-time events | Python, Flask, MongoDB |
-| [**pocketvault**](https://github.com/thedivinez/pocketvault) | Financial vault & dashboard — secure asset management UI | Go, Templ, TypeScript |
-| [**pocketvault-dash**](https://github.com/thedivinez/pocketvault-dash) | Pocketvault dashboard component layer | Templ, Go |
+| [**pocketvault**](https://github.com/thedivinez/pocketvault) | Financial vault & asset management dashboard | Go, Templ, TypeScript |
 | [**financial-flag-icons**](https://github.com/thedivinez/financial-flag-icons) | Open-source financial & currency flag icon library used in trading UIs | TypeScript |
-| [**botfomulla**](https://github.com/thedivinez/botfomulla) | Framework for building dynamic, rule-driven chatbots | JS, CSS |
-| [**youtubedownloadbot**](https://github.com/thedivinez/youtubedownloadbot) | WhatsApp bot — MP3/MP4 downloads from YouTube via chat | Python |
-| [**suppliersorg**](https://github.com/thedivinez/suppliersorg) | Automated B2B supplier discovery engine from online directories | Python |
-| [**kudzi-web**](https://github.com/thedivinez/kudzi-web) | Polished portfolio website | TypeScript |
 
 ---
 
