@@ -117,7 +117,7 @@ I don't just write code — I architect systems that handle real money, real tra
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=thedivinez&show_icons=true&theme=tokyonight&count_private=true&include_all_commits=true&hide_border=true&show=reviews,discussions_started,prs_merged" height="165" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=thedivinez&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" height="165" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=thedivinez&layout=compact&theme=tokyonight&hide_border=true&langs_count=10&count_private=true" height="165" />
 </p>
 
 <p align="center">
